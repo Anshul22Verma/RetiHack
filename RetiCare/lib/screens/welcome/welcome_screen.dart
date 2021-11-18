@@ -18,13 +18,29 @@ class WelcomeScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Spacer(flex: 2), //2/6
-                  Text(
-                    "Let's Play Quiz,",
-                    style: Theme.of(context).textTheme.headline4.copyWith(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                  Row(
+                    children: [
+                      Text(
+                        "Age",
+                        style: Theme.of(context).textTheme.headline4.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        "Wise",
+                        style: Theme.of(context).textTheme.headline4.copyWith(
+                            color: Colors.amber[900], fontWeight: FontWeight.bold),
+                      ),
+                      Text(
+                        " MMSE,",
+                        style: Theme.of(context).textTheme.headline4.copyWith(
+                            color: Colors.white, fontWeight: FontWeight.bold),
+                      ),
+                    ],
                   ),
+                  Spacer(),// 1/6
                   Text("Enter your informations below"),
-                  Spacer(), // 1/6
+                  SizedBox(height:10),
+                  Text("Name"),
                   TextField(
                     decoration: InputDecoration(
                       filled: true,
@@ -35,7 +51,19 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(), // 1/6
+                  SizedBox(height:10),
+                  Text("Age"),
+                  TextField(
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFF1C2341),
+                      hintText: "Age",
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                    ),
+                  ),
+                  Spacer(),// 1/6
                   InkWell(
                     onTap: () => Get.to(QuizScreen()),
                     child: Container(
@@ -47,7 +75,7 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
                       child: Text(
-                        "Lets Start Quiz",
+                        "Start",
                         style: Theme.of(context)
                             .textTheme
                             .button
