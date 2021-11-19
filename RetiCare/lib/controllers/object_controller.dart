@@ -44,7 +44,6 @@ class ObjectQuestionController extends GetxController
   // for more about obs please check documentation
   RxInt _questionNumber = 1.obs;
   RxInt get questionNumber => this._questionNumber;
-  var unsucessful_attempt = 0;
 
   int _numOfCorrectAns = 0;
   int get numOfCorrectAns => this._numOfCorrectAns;
@@ -89,10 +88,6 @@ class ObjectQuestionController extends GetxController
     _animationController.stop();
     update();
 
-    if (_numOfCorrectAns == 0){
-      unsucessful_attempt ++;
-    }
-
     // Once user select an ans after 3s it will go to the next qn
     Future.delayed(Duration(seconds: 3), () {
       nextQuestion();
@@ -101,7 +96,7 @@ class ObjectQuestionController extends GetxController
 
   void nextQuestion() {
     update();
-    if (_questionNumber.value != _objquestions.length || unsucessful_attempt == 1) {
+    if (_questionNumber.value != _objquestions.length) {
       _isAnswered = false;
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);

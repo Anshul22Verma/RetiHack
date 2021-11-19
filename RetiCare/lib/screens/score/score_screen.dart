@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:RetiCare/constants.dart';
 import 'package:RetiCare/controllers/question_controller.dart';
 import 'package:RetiCare/controllers/object_controller.dart';
+import 'package:RetiCare/controllers/object_show_controller.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ScoreScreen extends StatelessWidget {
@@ -10,6 +11,7 @@ class ScoreScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     QuestionController _qnController = Get.put(QuestionController());
     ObjectQuestionController _objqnController = Get.put(ObjectQuestionController());
+    ObjShowQuestionController _objshowController = Get.put(ObjShowQuestionController());
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -27,7 +29,7 @@ class ScoreScreen extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "${_qnController.numOfCorrectAns * 1 + _objqnController.numOfCorrectAns * 3 - _objqnController.unsucessful_attempt * 2}/${_qnController.questions.length * 1 + _objqnController.objquestions.length * 3}",
+                "${_qnController.numOfCorrectAns * 1 + _objqnController.numOfCorrectAns * 3 + _objshowController.numOfCorrectAns * 1}/${_qnController.questions.length * 1 + _objqnController.objquestions.length * 3 + _objshowController.questions.length * 3}",
                 style: Theme.of(context)
                   .textTheme
                   .headline4
