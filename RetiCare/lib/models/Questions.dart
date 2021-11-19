@@ -30,13 +30,13 @@ const List sample_data = [
     "id": 4,
     "question": "What is today's date ?",
     "options": ['16', '18', '17', '19'],
-    "answer_index": 1,
+    "answer_index": 3,
   },
   {
     "id": 5,
     "question": "What day of the week is it ?",
     "options": ['Monday', 'Thursday', 'Friday', 'Saturday'],
-    "answer_index": 1,
+    "answer_index": 2,
   },
   {
     "id": 6,

@@ -37,7 +37,7 @@ class WelcomeScreen extends StatelessWidget {
                             color: Colors.amber[900], fontWeight: FontWeight.bold),
                       ),
                       Text(
-                        "MMSE",
+                        " MMSE,",
                         style: Theme.of(context).textTheme.headline4.copyWith(
                             color: Colors.white, fontWeight: FontWeight.bold),
                       ),

@@ -56,9 +56,9 @@ class Option extends StatelessWidget {
                     "${index + 1}.",
                     style: TextStyle(color: getTheRightColor(), fontSize: 16),
                   ),
-                  new Image.asset(img1, height: 35, width: 35),
-                  new Image.asset(img2, height: 35, width: 35),
-                  new Image.asset(img3, height: 35, width: 35),
+                  new Image.asset(img1, height: 30, width: 30),
+                  new Image.asset(img2, height: 30, width: 30),
+                  new Image.asset(img3, height: 30, width: 30),
                   Container(
                     height: 26,
                     width: 26,
