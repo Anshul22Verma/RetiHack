@@ -15,15 +15,12 @@ var images = [
   ['ballon', 'assets/objectsNanimals/ballon.png'],
   ['bomb', 'assets/objectsNanimals/bomb.png'],
   ['cat', 'assets/objectsNanimals/cat.png'],
-  ['dino', 'assets/objectsNanimals/dino.png'],
+  ['dinosaur', 'assets/objectsNanimals/dino.png'],
   ['dog', 'assets/objectsNanimals/dog.png'],
   ['ghost', 'assets/objectsNanimals/ghost.png'],
   ['pencil', 'assets/objectsNanimals/pencil.png'],
   ['soccer ball', 'assets/objectsNanimals/soccer.png'],
 ];
-
-var int1 = _random.nextInt(images.length);
-var int2 = _random.nextInt(images.length);
 
 int return_diff_rand(images, ignore_){
   var r = 0;
@@ -32,6 +29,9 @@ int return_diff_rand(images, ignore_){
   } while (ignore_.contains(r));
   return r;
 }
+
+var int1 = _random.nextInt(images.length);
+var int2 = return_diff_rand(images, [int1]);
 
 var into11 = return_diff_rand(images, [int1]);
 var into12 = return_diff_rand(images, [int1, into11]);
