@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:RetiCare/models/Speaking.dart';
-import 'package:RetiCare/screens/draw/drawing_screen.dart';
+import 'package:RetiCare/models/Draw.dart';
+import 'package:RetiCare/screens/score/score_screen.dart';
 
 
 // We use get package for our state management
 
-class SpeakingController extends GetxController
+class DrawController extends GetxController
     with SingleGetTickerProviderMixin {
   // Lets animated our progress bar
 
@@ -19,15 +19,15 @@ class SpeakingController extends GetxController
   PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<SpeakingTask> _questions = speaking_data
+  List<ObjDrawTask> _questions = sample_object_draw_data
       .map(
-        (question) => SpeakingTask(
-        id: question['id'],
-        question: question['question'],
-        ),
+        (question) => ObjDrawTask(
+      id: question['id'],
+      img: question['img'],
+    ),
   )
       .toList();
-  List<SpeakingTask> get questions => this._questions;
+  List<ObjDrawTask> get questions => this._questions;
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
@@ -74,21 +74,21 @@ class SpeakingController extends GetxController
     _pageController.dispose();
   }
 
-  // void checkAns(SpeakingTask question, int selectedIndex) {
-  //   // because once user press any option then it will run
-  //   _isAnswered = true;
-  //   // add scores of the speech model
-  //   _numOfCorrectAns++;
-  //
-  //   // It will stop the counter
-  //   _animationController.stop();
-  //   update();
-  //
-  //   // Once user select an ans after 3s it will go to the next qn
-  //   Future.delayed(Duration(seconds: 3), () {
-  //     nextQuestion();
-  //   });
-  // }
+  void checkAns(ObjDrawTask question, int selectedIndex) {
+    // because once user press any option then it will run
+    _isAnswered = true;
+    // add scores of the speech model
+    //_numOfCorrectAns++;
+
+    // It will stop the counter
+    _animationController.stop();
+    update();
+
+    // Once user select an ans after 3s it will go to the next qn
+    Future.delayed(Duration(seconds: 3), () {
+      nextQuestion();
+    });
+  }
 
   void nextQuestion() {
     if (_questionNumber.value != _questions.length) {
@@ -105,7 +105,7 @@ class SpeakingController extends GetxController
       _animationController.forward().whenComplete(nextQuestion);
     } else {
       // Get package provide us simple way to navigate another page
-      Get.to(DrawingScreen());
+      Get.to(ScoreScreen());
     }
   }
 
