@@ -1,6 +1,6 @@
 
 # About
-This is a project which @anshul-retispec and @CARLEYROSEH for the Hackathon at RetiSpec. We worked on building a flutter application to replace MMSE and provide care to people with mild-dementia to lower the rate of dementia. It also has features to be added to support an healthier lifestyle and thus increasing the potential users of this application.
+This is a project which @[anshul-retispec](https://github.com/anshul-retispec) and @[CARLEYROSEH](https://github.com/CARLEYROSEH) for the Hackathon at RetiSpec. We worked on building a flutter application to replace MMSE and provide care to people with mild-dementia to lower the rate of dementia. It also has features to be added to support an healthier lifestyle and thus increasing the potential users of this application.
 
 The application is very straight forward and here is how it looks like.
 
