@@ -36,8 +36,6 @@ class QuestionController extends GetxController
   int _correctAns;
   int get correctAns => this._correctAns;
 
-  bool _objectRan = false;
-
   int _selectedAns;
   int get selectedAns => this._selectedAns;
 

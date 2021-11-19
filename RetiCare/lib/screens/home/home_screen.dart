@@ -2,18 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:RetiCare/constants.dart';
-import 'package:RetiCare/screens/quiz/quiz_screen.dart';
+import 'package:RetiCare/screens/welcome/welcome_screen.dart';
+import 'package:RetiCare/screens/care/care_welcome_screen.dart';
 
-class WelcomeScreen extends StatelessWidget {
+
+class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        // Fluttter show the back button automatically
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-      ),
       body: Stack(
         children: [
           SvgPicture.asset("assets/icons/bg.svg", fit: BoxFit.fill),
@@ -36,43 +32,11 @@ class WelcomeScreen extends StatelessWidget {
                         style: Theme.of(context).textTheme.headline4.copyWith(
                             color: Colors.amber[900], fontWeight: FontWeight.bold),
                       ),
-                      Text(
-                        "MMSE",
-                        style: Theme.of(context).textTheme.headline4.copyWith(
-                            color: Colors.white, fontWeight: FontWeight.bold),
-                      ),
-
                     ],
                   ),
                   Spacer(),// 1/6
-                  Text("Enter your informations below"),
-                  SizedBox(height:10),
-                  Text("Name"),
-                  TextField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Color(0xFF1C2341),
-                      hintText: "Full Name",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                      ),
-                    ),
-                  ),
-                  SizedBox(height:10),
-                  Text("Age"),
-                  TextField(
-                    decoration: InputDecoration(
-                      filled: true,
-                      fillColor: Color(0xFF1C2341),
-                      hintText: "Age",
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                      ),
-                    ),
-                  ),
-                  Spacer(),// 1/6
                   InkWell(
-                    onTap: () => Get.to(QuizScreen()),
+                    onTap: () => Get.to(WelcomeScreen()),
                     child: Container(
                       width: double.infinity,
                       alignment: Alignment.center,
@@ -82,7 +46,7 @@ class WelcomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
                       child: Text(
-                        "Start",
+                        "MMSE",
                         style: Theme.of(context)
                             .textTheme
                             .button
@@ -90,7 +54,27 @@ class WelcomeScreen extends StatelessWidget {
                       ),
                     ),
                   ),
-                  Spacer(flex: 2), // it will take 2/6 spaces
+                  SizedBox(height: 10),
+                  InkWell(
+                    onTap: () => Get.to(CareWelcomeScreen()),
+                    child: Container(
+                      width: double.infinity,
+                      alignment: Alignment.center,
+                      padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
+                      decoration: BoxDecoration(
+                        gradient: kPrimaryGradient,
+                        borderRadius: BorderRadius.all(Radius.circular(12)),
+                      ),
+                      child: Text(
+                        "RetiCare",
+                        style: Theme.of(context)
+                            .textTheme
+                            .button
+                            .copyWith(color: Colors.black),
+                      ),
+                    ),
+                  ),
+                  Spacer(flex: 2,),
                 ],
               ),
             ),
