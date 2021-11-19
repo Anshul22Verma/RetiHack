@@ -32,9 +32,9 @@ class MainObjectQuestionCard extends StatelessWidget {
                 .copyWith(color: kBlackColor),
           ),
           Spacer(),
-          new Image.asset(question.img2, height: 110, width: 110),
-          new Image.asset(question.img1, height: 110, width: 110),
-          new Image.asset(question.img3, height: 110, width: 110),
+          new Image.asset(question.img2, height: 100, width: 100),
+          new Image.asset(question.img1, height: 100, width: 100),
+          new Image.asset(question.img3, height: 100, width: 100),
           SizedBox(height: kDefaultPadding / 2),
            // ...List.generate(
            //   question.options.length,
