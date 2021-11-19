@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:RetiCare/controllers/object_controller.dart';
-import 'package:RetiCare/screens/object_question/components/body.dart';
+import 'package:reticare/controllers/object_controller.dart';
+import 'package:reticare/screens/object_question/components/body.dart';
 
 class ObjectQuestionScreen extends StatelessWidget {
   @override

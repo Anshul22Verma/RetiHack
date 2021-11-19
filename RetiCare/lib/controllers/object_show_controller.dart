@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:RetiCare/models/ObjectShow.dart';
-import 'package:RetiCare/screens/object_question/object_screen.dart';
+import 'package:reticare/models/ObjectShow.dart';
+import 'package:reticare/screens/object_question/object_screen.dart';
 
 
 // We use get package for our state management

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:RetiCare/controllers/object_main_controller.dart';
-import 'package:RetiCare/models/ObjectQuestion.dart';
+import 'package:reticare/models/ObjectQuestion.dart';
 
 import '../../../constants.dart';
 

@@ -68,7 +68,7 @@ class CareWelcomeScreen extends StatelessWidget {
         iconTheme: IconThemeData(
           color: Colors.black, //change your color here
         ),
-        title: Text("RetiCare"),
+        title: Text("reticare"),
         centerTitle: true,
       ),
 

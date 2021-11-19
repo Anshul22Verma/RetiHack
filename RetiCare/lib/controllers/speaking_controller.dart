@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:RetiCare/models/Speaking.dart';
-import 'package:RetiCare/screens/draw/drawing_screen.dart';
+import 'package:reticare/models/Speaking.dart';
+import 'package:reticare/screens/draw/drawing_screen.dart';
 
 
 // We use get package for our state management

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-// import 'package:RetiCare/controllers/draw_controller.dart';
-import 'package:RetiCare/models/Draw.dart';
+// import 'package:reticare/controllers/draw_controller.dart';
+import 'package:reticare/models/Draw.dart';
 
 import '../../../constants.dart';
 

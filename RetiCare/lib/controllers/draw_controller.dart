@@ -1,8 +1,8 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:RetiCare/models/Draw.dart';
-import 'package:RetiCare/screens/score/score_screen.dart';
+import 'package:reticare/models/Draw.dart';
+import 'package:reticare/screens/score/score_screen.dart';
 
 
 // We use get package for our state management

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:RetiCare/controllers/draw_controller.dart';
+import 'package:reticare/controllers/draw_controller.dart';
 
 import 'components/body.dart';
 

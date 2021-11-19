@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import 'package:RetiCare/controllers/speaking_controller.dart';
-import 'package:RetiCare/models/Speaking.dart';
+import 'package:reticare/controllers/speaking_controller.dart';
+import 'package:reticare/models/Speaking.dart';
 
 import '../../../constants.dart';
 

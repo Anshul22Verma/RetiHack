@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:RetiCare/constants.dart';
-import 'package:RetiCare/controllers/question_controller.dart';
+import 'package:reticare/constants.dart';
+import 'package:reticare/controllers/question_controller.dart';
 import 'package:flutter_svg/svg.dart';
 
 import 'progress_bar.dart';

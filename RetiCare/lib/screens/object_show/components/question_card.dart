@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:RetiCare/controllers/object_show_controller.dart';
-import 'package:RetiCare/models/ObjectShow.dart';
+import 'package:reticare/controllers/object_show_controller.dart';
+import 'package:reticare/models/ObjectShow.dart';
 
 import '../../../constants.dart';
 import 'option.dart';

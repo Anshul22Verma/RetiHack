@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:RetiCare/screens/home/home_screen.dart';
+import 'package:reticare/screens/home/home_screen.dart';
 
 void main() {
   runApp(MyApp());
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
-      title: 'RetiCare',
+      title: 'reticare',
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark(),
       home: HomeScreen(),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:RetiCare/constants.dart';
-import 'package:RetiCare/screens/welcome/welcome_screen.dart';
-import 'package:RetiCare/screens/care/care_welcome_screen.dart';
+import 'package:reticare/constants.dart';
+import 'package:reticare/screens/welcome/welcome_screen.dart';
+import 'package:reticare/screens/care/care_welcome_screen.dart';
 
 
 class HomeScreen extends StatelessWidget {
@@ -66,7 +66,7 @@ class HomeScreen extends StatelessWidget {
                         borderRadius: BorderRadius.all(Radius.circular(12)),
                       ),
                       child: Text(
-                        "RetiCare",
+                        "reticare",
                         style: Theme.of(context)
                             .textTheme
                             .button
