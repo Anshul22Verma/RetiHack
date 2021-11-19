@@ -1,12 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:RetiCare/models/ObjectQuestion.dart';
-import 'package:RetiCare/screens/speaking/speaking_screen.dart';
+import 'package:RetiCare/models/Speaking.dart';
+import 'package:RetiCare/screens/score/score_screen.dart';
+
 
 // We use get package for our state management
 
-class ObjectQuestionController extends GetxController
+class SpeakingController extends GetxController
     with SingleGetTickerProviderMixin {
   // Lets animated our progress bar
 
@@ -18,19 +19,15 @@ class ObjectQuestionController extends GetxController
   PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<Obj3> _objquestions = sample_object_data
+  List<SpeakingTask> _questions = speaking_data
       .map(
-        (question) => Obj3(
+        (question) => SpeakingTask(
         id: question['id'],
-        img1: question['img2'],
-        img2: question['img1'],
-        img3: question['img3'],
-        options: question['options'],
-        answer_index: question['answer_index']),
+        question: question['question'],
+        ),
   )
       .toList();
-
-  List<Obj3> get objquestions => this._objquestions;
+  List<SpeakingTask> get questions => this._questions;
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
@@ -76,13 +73,11 @@ class ObjectQuestionController extends GetxController
     _pageController.dispose();
   }
 
-  void checkAns(Obj3 question, int selectedIndex) {
+  void checkAns(SpeakingTask question, int selectedIndex) {
     // because once user press any option then it will run
     _isAnswered = true;
-    _correctAns = question.answer_index;
-    _selectedAns = selectedIndex;
-
-    if (_correctAns == _selectedAns) _numOfCorrectAns++;
+    // add scores of the speech model
+    _numOfCorrectAns++;
 
     // It will stop the counter
     _animationController.stop();
@@ -95,7 +90,7 @@ class ObjectQuestionController extends GetxController
   }
 
   void nextQuestion() {
-    if (_questionNumber.value != _objquestions.length) {
+    if (_questionNumber.value != _questions.length) {
       _isAnswered = false;
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);
@@ -108,7 +103,7 @@ class ObjectQuestionController extends GetxController
       _animationController.forward().whenComplete(nextQuestion);
     } else {
       // Get package provide us simple way to navigate another page
-      Get.to(SpeakingScreen());
+      Get.to(ScoreScreen());
     }
   }
 

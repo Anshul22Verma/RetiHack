@@ -28,7 +28,7 @@ class QuestionCard extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            "What is this image known as",
+            "What is the object/animal in this image known as",
             style: Theme.of(context)
                 .textTheme
                 .headline6
