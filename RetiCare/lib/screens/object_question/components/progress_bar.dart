@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:RetiCare/controllers/question_controller.dart';
+import 'package:RetiCare/controllers/object_controller.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../../constants.dart';
@@ -19,8 +19,8 @@ class ProgressBar extends StatelessWidget {
         border: Border.all(color: Color(0xFF3F4768), width: 3),
         borderRadius: BorderRadius.circular(50),
       ),
-      child: GetBuilder<QuestionController>(
-        init: QuestionController(),
+      child: GetBuilder<ObjectQuestionController>(
+        init: ObjectQuestionController(),
         builder: (controller) {
           return Stack(
             children: [

@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:quiz_app/constants.dart';
-import 'package:quiz_app/controllers/question_controller.dart';
+import 'package:RetiCare/constants.dart';
+import 'package:RetiCare/controllers/question_controller.dart';
+import 'package:RetiCare/controllers/object_controller.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ScoreScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     QuestionController _qnController = Get.put(QuestionController());
+    ObjectQuestionController _objqnController = Get.put(ObjectQuestionController());
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
@@ -25,12 +27,12 @@ class ScoreScreen extends StatelessWidget {
               ),
               Spacer(),
               Text(
-                "${_qnController.numOfCorrectAns * 1}/${_qnController.questions.length * 1}",
+                "${_qnController.numOfCorrectAns * 1 + _objqnController.numOfCorrectAns * 3 - _objqnController.unsucessful_attempt * 2}/${_qnController.questions.length * 1 + _objqnController.objquestions.length * 3}",
                 style: Theme.of(context)
-                    .textTheme
-                    .headline4
-                    .copyWith(color: kSecondaryColor),
-              ),
+                  .textTheme
+                  .headline4
+                  .copyWith(color: kSecondaryColor),
+            ),
               Spacer(flex: 3),
             ],
           )

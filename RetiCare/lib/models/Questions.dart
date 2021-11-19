@@ -56,5 +56,17 @@ const List sample_data = [
     "options": ['Toronto', 'Mississauga', 'Oakville', 'Scarborough'],
     "answer_index": 0,
   },
-
+  {
+    "id": 9,
+    "question":
+    "Spell the word CAT backwards ?",
+    "options": ['ANT', 'CAT', 'ATC', 'TAC'],
+    "answer_index": 3,
+  },
+  {
+    "id": 10,
+    "question": "Spell the word PINEAPPLE backwards ?",
+    "options": ['ELPPAENIP', 'ELPPEANIP', 'PINEELPPA', 'APPLEPINE'],
+    "answer_index": 1,
+  },
 ];

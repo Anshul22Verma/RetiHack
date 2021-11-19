@@ -1,13 +1,12 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:RetiCare/models/Questions.dart';
-import 'package:RetiCare/screens/object_show/object_show_screen.dart';
-
+import 'package:RetiCare/models/ObjectQuestion.dart';
+import 'package:RetiCare/screens/object_question/object_question_screen.dart';
 
 // We use get package for our state management
 
-class QuestionController extends GetxController
+class ObjectMainQuestionController extends GetxController
     with SingleGetTickerProviderMixin {
   // Lets animated our progress bar
 
@@ -19,34 +18,26 @@ class QuestionController extends GetxController
   PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<Question> _questions = sample_data
+  List<Obj3> _objquestions = sample_object_data
       .map(
-        (question) => Question(
-            id: question['id'],
-            question: question['question'],
-            options: question['options'],
-            answer: question['answer_index']),
-      )
+        (question) => Obj3(
+        id: question['id'],
+        img1: question['img1'],
+        img2: question['img2'],
+        img3: question['img3'],
+        options: question['options'],
+        answer_index: question['answer_index']),
+  )
       .toList();
-  List<Question> get questions => this._questions;
+
+  List<Obj3> get objquestions => this._objquestions;
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
 
-  int _correctAns;
-  int get correctAns => this._correctAns;
-
-  bool _objectRan = false;
-
-  int _selectedAns;
-  int get selectedAns => this._selectedAns;
-
   // for more about obs please check documentation
   RxInt _questionNumber = 1.obs;
   RxInt get questionNumber => this._questionNumber;
-
-  int _numOfCorrectAns = 0;
-  int get numOfCorrectAns => this._numOfCorrectAns;
 
   // called immediately after the widget is allocated memory
   @override
@@ -76,26 +67,9 @@ class QuestionController extends GetxController
     _pageController.dispose();
   }
 
-  void checkAns(Question question, int selectedIndex) {
-    // because once user press any option then it will run
-    _isAnswered = true;
-    _correctAns = question.answer;
-    _selectedAns = selectedIndex;
-
-    if (_correctAns == _selectedAns) _numOfCorrectAns++;
-
-    // It will stop the counter
-    _animationController.stop();
-    update();
-
-    // Once user select an ans after 3s it will go to the next qn
-    Future.delayed(Duration(seconds: 3), () {
-      nextQuestion();
-    });
-  }
 
   void nextQuestion() {
-    if (_questionNumber.value != _questions.length) {
+    if (_questionNumber.value != objquestions.length) {
       _isAnswered = false;
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);
@@ -108,7 +82,7 @@ class QuestionController extends GetxController
       _animationController.forward().whenComplete(nextQuestion);
     } else {
       // Get package provide us simple way to navigate another page
-      Get.to(ObjShowQuizScreen());
+      Get.to(ObjectQuestionScreen());
     }
   }
 

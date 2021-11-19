@@ -1,23 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:RetiCare/controllers/question_controller.dart';
-import 'package:RetiCare/models/Questions.dart';
+import 'package:RetiCare/controllers/object_controller.dart';
+import 'package:RetiCare/models/ObjectQuestion.dart';
 
 import '../../../constants.dart';
 import 'option.dart';
 
-class QuestionCard extends StatelessWidget {
-  const QuestionCard({
+class ObjectQuestionCard extends StatelessWidget {
+  const ObjectQuestionCard({
     Key key,
     // it means we have to pass this
     @required this.question,
   }) : super(key: key);
 
-  final Question question;
+  final Obj3 question;
 
   @override
   Widget build(BuildContext context) {
-    QuestionController _controller = Get.put(QuestionController());
+    ObjectQuestionController _controller = Get.put(ObjectQuestionController());
     return Container(
       margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       padding: EdgeInsets.all(kDefaultPadding),
@@ -28,7 +28,7 @@ class QuestionCard extends StatelessWidget {
       child: Column(
         children: [
           Text(
-            question.question,
+            "Please select the pattern you saw",
             style: Theme.of(context)
                 .textTheme
                 .headline6
@@ -37,9 +37,11 @@ class QuestionCard extends StatelessWidget {
           SizedBox(height: kDefaultPadding / 2),
           ...List.generate(
             question.options.length,
-            (index) => Option(
+                (index) => Option(
               index: index,
-              text: question.options[index],
+              img1: question.options[index][0],
+              img2: question.options[index][1],
+              img3: question.options[index][2],
               press: () => _controller.checkAns(question, index),
             ),
           ),

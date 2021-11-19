@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:RetiCare/controllers/question_controller.dart';
+import 'package:RetiCare/controllers/object_show_controller.dart';
 
 import 'components/body.dart';
 
-class QuizScreen extends StatelessWidget {
+class ObjShowQuizScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    QuestionController _controller = Get.put(QuestionController());
+    ObjShowQuestionController _controller = Get.put(ObjShowQuestionController());
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(

@@ -1,13 +1,13 @@
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:get/state_manager.dart';
-import 'package:RetiCare/models/Questions.dart';
-import 'package:RetiCare/screens/object_show/object_show_screen.dart';
+import 'package:RetiCare/models/ObjectShow.dart';
+import 'package:RetiCare/screens/object_question/object_screen.dart';
 
 
 // We use get package for our state management
 
-class QuestionController extends GetxController
+class ObjShowQuestionController extends GetxController
     with SingleGetTickerProviderMixin {
   // Lets animated our progress bar
 
@@ -19,24 +19,22 @@ class QuestionController extends GetxController
   PageController _pageController;
   PageController get pageController => this._pageController;
 
-  List<Question> _questions = sample_data
+  List<ObjShow> _questions = sample_object_show_data
       .map(
-        (question) => Question(
-            id: question['id'],
-            question: question['question'],
-            options: question['options'],
-            answer: question['answer_index']),
-      )
+        (question) => ObjShow(
+        id: question['id'],
+        img: question['img'],
+        options: question['options'],
+        answer_index: question['answer_index']),
+  )
       .toList();
-  List<Question> get questions => this._questions;
+  List<ObjShow> get questions => this._questions;
 
   bool _isAnswered = false;
   bool get isAnswered => this._isAnswered;
 
   int _correctAns;
   int get correctAns => this._correctAns;
-
-  bool _objectRan = false;
 
   int _selectedAns;
   int get selectedAns => this._selectedAns;
@@ -76,10 +74,10 @@ class QuestionController extends GetxController
     _pageController.dispose();
   }
 
-  void checkAns(Question question, int selectedIndex) {
+  void checkAns(ObjShow question, int selectedIndex) {
     // because once user press any option then it will run
     _isAnswered = true;
-    _correctAns = question.answer;
+    _correctAns = question.answer_index;
     _selectedAns = selectedIndex;
 
     if (_correctAns == _selectedAns) _numOfCorrectAns++;
@@ -108,7 +106,7 @@ class QuestionController extends GetxController
       _animationController.forward().whenComplete(nextQuestion);
     } else {
       // Get package provide us simple way to navigate another page
-      Get.to(ObjShowQuizScreen());
+      Get.to(ObjectScreen());
     }
   }
 
