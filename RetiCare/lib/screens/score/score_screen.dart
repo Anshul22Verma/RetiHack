@@ -58,10 +58,12 @@ class ScoreScreen extends StatelessWidget {
                         .button
                         .copyWith(color: Colors.black),
                     ),
+                  ),
                 ),
-      ),
-    ]),
-    ],
+              Spacer(flex: 3),
+            ]
+          ),
+        ],
       ),
     );
   }
