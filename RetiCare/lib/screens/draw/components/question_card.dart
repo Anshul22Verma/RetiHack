@@ -18,10 +18,9 @@ class DrawingCard extends StatelessWidget {
   // final audioPlayer = AssetsAudioPlayer();
   // String filePath;
 
-
   @override
   Widget build(BuildContext context) {
-    // SpeakingController _controller = Get.put(SpeakingController());
+    // DrawController _controller = Get.put(DrawController());
     return Container(
       margin: EdgeInsets.symmetric(horizontal: kDefaultPadding),
       padding: EdgeInsets.all(kDefaultPadding),

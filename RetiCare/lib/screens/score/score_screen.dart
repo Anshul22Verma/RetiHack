@@ -6,6 +6,7 @@ import 'package:RetiCare/controllers/object_controller.dart';
 import 'package:RetiCare/controllers/object_show_controller.dart';
 import 'package:RetiCare/controllers/speaking_controller.dart';
 import 'package:RetiCare/controllers/draw_controller.dart';
+import 'package:RetiCare/screens/home/home_screen.dart';
 import 'package:flutter_svg/svg.dart';
 
 class ScoreScreen extends StatelessWidget {
@@ -40,9 +41,27 @@ class ScoreScreen extends StatelessWidget {
                   .copyWith(color: kSecondaryColor),
             ),
               Spacer(flex: 3),
-            ],
-          )
-        ],
+              InkWell(
+                onTap: () => Get.to(HomeScreen()),
+                child: Container(
+                  width: double.infinity,
+                  alignment: Alignment.center,
+                  padding: EdgeInsets.all(kDefaultPadding * 0.75), // 15
+                  decoration: BoxDecoration(
+                    gradient: kPrimaryGradient,
+                    borderRadius: BorderRadius.all(Radius.circular(12)),
+                  ),
+                  child: Text(
+                    "Home",
+                    style: Theme.of(context)
+                        .textTheme
+                        .button
+                        .copyWith(color: Colors.black),
+                    ),
+                ),
+      ),
+    ]),
+    ],
       ),
     );
   }
