@@ -73,25 +73,26 @@ class SpeakingController extends GetxController
     _pageController.dispose();
   }
 
-  void checkAns(SpeakingTask question, int selectedIndex) {
-    // because once user press any option then it will run
-    _isAnswered = true;
-    // add scores of the speech model
-    _numOfCorrectAns++;
-
-    // It will stop the counter
-    _animationController.stop();
-    update();
-
-    // Once user select an ans after 3s it will go to the next qn
-    Future.delayed(Duration(seconds: 3), () {
-      nextQuestion();
-    });
-  }
+  // void checkAns(SpeakingTask question, int selectedIndex) {
+  //   // because once user press any option then it will run
+  //   _isAnswered = true;
+  //   // add scores of the speech model
+  //   _numOfCorrectAns++;
+  //
+  //   // It will stop the counter
+  //   _animationController.stop();
+  //   update();
+  //
+  //   // Once user select an ans after 3s it will go to the next qn
+  //   Future.delayed(Duration(seconds: 3), () {
+  //     nextQuestion();
+  //   });
+  // }
 
   void nextQuestion() {
     if (_questionNumber.value != _questions.length) {
-      _isAnswered = false;
+      _isAnswered = true;
+      _numOfCorrectAns ++;
       _pageController.nextPage(
           duration: Duration(milliseconds: 250), curve: Curves.ease);
 
